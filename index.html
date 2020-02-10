@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创新研发部随机抽取</title>
+    <style>
+       .container{
+           padding-left: 0 !important;
+           padding-right: 0 !important;
+           margin: 12px;
+       }
+    </style>
+    <!-- <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script> -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="row" style="text-align: center;"><h3>创新研发部随机抽取程序</h3></div>
+    
+    <div class="container table-responsive">
+        <table id="tbl" class="table table-bordered table-hover">
+            <tr>
+                <td>人数</td>
+                <td><input id="inp" type="text" value="" placeholder="请输入随机人数" /></td>
+                <td><button id="btn" class="btn btn-primary">抽取</button></td>
+            </tr>
+            <tr>
+                <td>序号</td>
+                <td>所有人员</td>
+                <td>抽取人员</td>
+            </tr>
+            <!-- <tr class="info ">
+                
+            </tr>
+         -->
+
+
+            <!-- <tr id="first">
+            </tr>
+            <tr id="reslut"></tr> -->
+
+        </table>
+    </div>
+    <script>
+        $(function () {
+
+            var people = ["潘贤真",
+                "张炳新",
+                "代伟",
+                "李洪超",
+                "罗伟杰",
+                "荣蓉",
+                "冯益祥",
+                "冯燕",
+                "焦咪咪",
+                "黄耀剑",
+                "江坚",
+                "刘诒斌",
+                "陈育聪",
+                "张新",
+                "王锦涛",
+                "秦巧",
+                "吴停",
+                "朱文文",
+                "陈华文",
+                "袁桥广",
+                "李云鹏",
+                "查小平",
+                "孙霁耘",
+                "杨超城",
+                "刘耿练",
+                "林敏",
+                "唐儒宪",
+                "王东成",
+                "刘长春",
+                "李高甫",
+                "杨华强",
+                "袁景立",
+                "韦萍",
+                "吴智伟",
+                "柯舟洋",
+                "赵钧豪",
+                "杨玉静",
+                "吴海坤",
+                "黄应有",
+                "林杨智",
+                "冯钻优",
+                "叶增健",
+                "郑敬发",
+                "廖泽文",
+                "陈菁",
+                "游波",
+                "彭定旭",
+                "郭坤朋",
+                "梁勇",
+                "李特",
+                "李焕新",
+                "罗星",
+                "莫利龙",
+                "蔡福来",
+                "何颖学",
+                "陈博嘉",
+                "陈绍伟",
+                "王文艳",
+                "丁封宁",
+                "许见忠",
+                "关慧忠",
+                "彭思祥",
+                "李玲",
+                "叶锦果",
+            ]
+
+            console.log(people.length)
+            var str = '';
+            for (let index = 0; index < people.length; index++) {
+                var element = people[index];
+                str += ('<tr><td>' + (index + 1) + '</td><td>' + element + '</td><td id="td' + (index + 1) +
+                    '"></td></tr>')
+            }
+            $('#tbl').append(str)
+
+            $('#btn').click(function () {
+                var items = getRandomArrayElements(people, $('#inp').val())
+                console.log(items, 'items')
+                // var strs = '<td>抽取结果</td>'
+                for (let i = 0; i < items.length; i++) {
+                    var element = items[i];
+                    $('#td' + (i + 1)).html(element)
+                    // strs += ('<td>' + element + '</td>')
+                }
+                // $('#reslut').html(strs)
+            })
+            $('#more').click(function () {
+                window.location.reload()
+            })
+
+            function getRandomArrayElements(arr, count) {
+                var shuffled = arr.slice(0),
+                    i = arr.length,
+                    min = i - count,
+                    temp, index;
+                while (i-- > min) {
+                    index = Math.floor((i + 1) * Math.random());
+                    temp = shuffled[index];
+                    shuffled[index] = shuffled[i];
+                    shuffled[i] = temp;
+                }
+                return shuffled.slice(min);
+            }
+        })
+    </script>
+</body>
+
+</html>
