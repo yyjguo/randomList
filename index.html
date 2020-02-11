@@ -120,6 +120,70 @@
                 "彭思祥",
                 "李玲",
                 "叶锦果",
+            ];
+            var people1 = ["潘贤真",
+                "张炳新",
+                "代伟",
+                "李洪超",
+                "罗伟杰",
+                "荣蓉",
+                "冯益祥",
+                "冯燕",
+                "焦咪咪",
+                "黄耀剑",
+                "江坚",
+                "刘诒斌",
+                "陈育聪",
+                "张新",
+                "王锦涛",
+                "秦巧",
+                "吴停",
+                "朱文文",
+                "陈华文",
+                "袁桥广",
+                "李云鹏",
+                "查小平",
+                "孙霁耘",
+                "杨超城",
+                "刘耿练",
+                "林敏",
+                "唐儒宪",
+                "王东成",
+                "刘长春",
+                "李高甫",
+                "杨华强",
+                "袁景立",
+                "韦萍",
+                "吴智伟",
+                "柯舟洋",
+                "赵钧豪",
+                "杨玉静",
+                "吴海坤",
+                "黄应有",
+                "林杨智",
+                "冯钻优",
+                "叶增健",
+                "廖泽文",
+                "陈菁",
+                "游波",
+                "彭定旭",
+                "郭坤朋",
+                "梁勇",
+                "李特",
+                "李焕新",
+                "罗星",
+                "莫利龙",
+                "蔡福来",
+                "何颖学",
+                "陈博嘉",
+                "陈绍伟",
+                "王文艳",
+                "丁封宁",
+                "许见忠",
+                "关慧忠",
+                "彭思祥",
+                "李玲",
+                "叶锦果",
             ]
 
             console.log(people.length)
@@ -132,12 +196,15 @@
             $('#tbl').append(str)
 
             $('#btn').click(function () {
-                var items = getRandomArrayElements(people, $('#inp').val())
+                var items = getRandomArrayElements(people1, $('#inp').val())
                 console.log(items, 'items')
+                for (let index = 0; index < people.length; index++) { 
+                    $('#td' + (index + 1)).html('');
+                }
                 // var strs = '<td>抽取结果</td>'
                 for (let i = 0; i < items.length; i++) {
                     var element = items[i];
-                    $('#td' + (i + 1)).html(element)
+                    $('#td' + (i + 1)).html(element);
                     // strs += ('<td>' + element + '</td>')
                 }
                 // $('#reslut').html(strs)
