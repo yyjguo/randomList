@@ -119,6 +119,10 @@
                 {
                     id: 12,
                     name: 'PMO'
+                },
+                         {
+                    id: 13,
+                    name: '党员'
                 }
             ]
             var people = ["潘贤真",
@@ -347,6 +351,16 @@
                 '王文艳',
                 "叶锦果",
             ]
+            var dy=[
+            '李  玲',
+            '高天曦',
+'郭哲彦',
+'罗正德',
+'潘贤真',
+'吴 停',
+'郑克欧',
+'查小平',
+          ]
             console.log(people.length)
             let teamStr = '<option value=0>全部</option>'
             for (let i = 0; i < team.length; i++) {
@@ -396,6 +410,9 @@
                 }
                 if (val === 12) {
                     arr = pmo, arr1 = pmo1
+                }
+                if (val === 13) {
+                    arr = dy
                 }
                 showTeam(arr, arr1)
             })
@@ -457,6 +474,9 @@
                 }
                 if (val === 12) {
                     arr = pmo, arr1 = pmo1
+                }
+                if (val === 13) {
+                    arr =dy
                 }
                 console.log(arr, arr1)
                 choose(arr, arr1)
