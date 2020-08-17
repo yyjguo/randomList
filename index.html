@@ -123,6 +123,10 @@
                          {
                     id: 13,
                     name: '党员'
+                },
+                         {
+                    id: 14,
+                    name: '水运平台事业部'
                 }
             ]
             var people = ["潘贤真",
@@ -361,6 +365,7 @@
 '郑克欧',
 '查小平',
           ]
+var st=['刘慧','冯明钦','冯柏林','李泽豪']
             console.log(people.length)
             let teamStr = '<option value=0>全部</option>'
             for (let i = 0; i < team.length; i++) {
@@ -413,6 +418,9 @@
                 }
                 if (val === 13) {
                     arr = dy
+                }
+                if (val === 14) {
+                    arr = st
                 }
                 showTeam(arr, arr1)
             })
@@ -477,6 +485,9 @@
                 }
                 if (val === 13) {
                     arr =dy
+                }
+                 if (val === 14) {
+                    arr =st
                 }
                 console.log(arr, arr1)
                 choose(arr, arr1)
